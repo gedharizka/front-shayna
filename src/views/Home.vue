@@ -3,7 +3,7 @@
     <HeaderStore />
     <HeroCarousel />
     <WomanBanner />
-   
+    <HomeInsta />
 
   </div>
 </template>
@@ -14,6 +14,8 @@
 import HeaderStore from '@/components/HeaderStore.vue'
 import HeroCarousel from '@/components/HeroCarousel.vue'
 import WomanBanner from '@/components/WomanBanner.vue'
+import HomeInsta from '@/components/HomeInsta.vue'
+
 
 export default {
   name: 'Home',
@@ -21,6 +23,7 @@ export default {
     HeaderStore,
     HeroCarousel,
     WomanBanner,
+    HomeInsta
   }
 }
 </script>
