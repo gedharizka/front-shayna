@@ -4,6 +4,8 @@
     <HeroCarousel />
     <WomanBanner />
     <HomeInsta />
+    <HomePartner />
+    <Footer />
 
   </div>
 </template>
@@ -15,6 +17,10 @@ import HeaderStore from '@/components/HeaderStore.vue'
 import HeroCarousel from '@/components/HeroCarousel.vue'
 import WomanBanner from '@/components/WomanBanner.vue'
 import HomeInsta from '@/components/HomeInsta.vue'
+import HomePartner from '@/components/HomePartner.vue'
+import Footer from '@/components/Footer.vue'
+
+
 
 
 export default {
@@ -23,7 +29,9 @@ export default {
     HeaderStore,
     HeroCarousel,
     WomanBanner,
-    HomeInsta
+    HomeInsta,
+    HomePartner,
+    Footer
   }
 }
 </script>

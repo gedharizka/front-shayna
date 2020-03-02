@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12 mt-5">
-          <carousel class="product-slider" :items="3" :nav="false" :autoplay="true">
+          <carousel class="product-slider" :dots="false" :items="3" :nav="false" :autoplay="true">
             <div class="product-item">
               <div class="pi-pic">
                 <img src="img/mickey1.jpg" alt />
@@ -128,5 +128,8 @@ export default {
 <style scoped>
   .product-item{
     margin-right: 25px
+  }
+  .pi-pic{
+    height: 340px;
   }
 </style>
