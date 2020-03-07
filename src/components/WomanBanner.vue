@@ -129,7 +129,7 @@ export default {
   .product-item{
     margin-right: 25px
   }
-  .pi-pic{
+  /* .pi-pic{
     height: 340px;
-  }
+  } */
 </style>
