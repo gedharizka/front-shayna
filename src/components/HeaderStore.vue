@@ -28,10 +28,10 @@
               <ul class="nav-right">
                 <li class="cart-icon">
                   Keranjang Belanja &nbsp;
-                  <a href="#">
+                 <router-link to="/cart">
                     <i class="icon_bag_alt"></i>
                     <span>3</span>
-                  </a>
+                 </router-link>
                   <div class="cart-hover">
                     <div class="select-items">
                       <table>
