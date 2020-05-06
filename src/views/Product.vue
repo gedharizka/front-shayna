@@ -29,22 +29,15 @@
                 <div class="product-pic-zoom">
                   <img class="product-big-img" :src=gambar_default alt />
                 </div>
-                <div class="product-thumbs">
+                <div class="product-thumbs"  v-if="productDetails.galleries.length > 0">
                   <carousel class="product-thumbs-track ps-slider" :dots="false" :items="3" :nav="false">
-                    <div class="pt" @click="changeImage(thumbs[0])" :class="thumbs[0] == gambar_default ? 'active' :'' " >
-                      <img src="img/mickey1.jpg" alt />
-                    </div>
-
-                    <div class="pt" @click="changeImage(thumbs[1])" :class="thumbs[1] == gambar_default ? 'active' :'' " >
-                      <img src="img/mickey2.jpg" alt />
-                    </div>
-
-                    <div class="pt" @click="changeImage(thumbs[2])" :class="thumbs[2] == gambar_default ? 'active' :'' " >
-                      <img src="img/mickey3.jpg" alt />
-                    </div>
-
-                    <div class="pt" @click="changeImage(thumbs[3])" :class="thumbs[3] == gambar_default ? 'active' :'' " >
-                      <img src="img/mickey4.jpg" alt />
+                    <div 
+                      v-for="ss in productDetails.galleries"
+                      :key="ss.id"
+                      class="pt" 
+                      @click="changeImage(ss.photo)" 
+                      :class="ss.photo == gambar_default ? 'active' :'' " >
+                      <img :src="ss.photo" alt />
                     </div>
                   </carousel><!-- Carousel -->
                   
@@ -98,7 +91,7 @@ export default {
   },
   data (){
     return {
-      gambar_default: "img/mickey1.jpg",
+      gambar_default: "",
       thumbs:[
         "img/mickey1.jpg",
         "img/mickey2.jpg",
@@ -108,10 +101,17 @@ export default {
      productDetails:[]
     }
   },
+
+
   methods:{
     changeImage(urlImage){
       this.gambar_default = urlImage;
-    }
+    },
+
+    setDataPicture(data){
+      this.productDetails = data;
+      this.gambar_default = data.galleries[0].photo;
+    },
   },
 
    mounted(){
@@ -122,7 +122,7 @@ export default {
         }
       })
       // .get("http://shayna-backend.belajarkoding.com/api/products")
-      .then(res=> (this.productDetails = res.data.data))
+      .then(res=> (this.setDataPicture(res.data.data)))
       .catch(err => console.log(err))
   }
   
